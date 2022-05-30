@@ -4,6 +4,15 @@ points:
       tags: 
         1u: true
       footprints:
+          choc_hotswap:
+            type: choc
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+                hotswap: true
           choc:
             type: choc
             anchor:
@@ -25,14 +34,14 @@ points:
             rotate: 0
             rows: 
               bottom:
-                bind: [0,0,0,0]
-                column_net: P15
+                bind: [0,0,0,2]
+                column_net: P10
               home:
-                bind: [0,0,0,0]
-                column_net: P0
+                bind: [0,0,0,2]
+                column_net: P9
               top: 
-                bind: [0,1,0,0]
-                column_net: P1
+                bind: [0,0,0,2]
+                column_net: P18
           ring:
             spread: cx
             stagger: 18
@@ -40,13 +49,13 @@ points:
             rows: 
               bottom:
                 bind: [0,0,0,1]
-                column_net: P14
+                column_net: P8
               home: 
                 bind: [0,0,0,0]
-                column_net: P16
+                column_net: P3
               top: 
-                bind: [0,1,0,0]
-                column_net: P10
+                bind: [0,2,2,2]
+                column_net: P19
           middle: 
             spread: cx
             stagger: 2
@@ -54,13 +63,13 @@ points:
             rows:
               bottom:
                 bind: [0,1,0,1]
-                column_net: P9
+                column_net: P7
               home: 
                 bind: [0,1,0,1]
-                column_net: P8
+                column_net: P2
               top:
-                column_net: P7
-                bind: [0,0,0,0]
+                column_net: P20
+                bind: [0,2,0,0]
           index: 
             spread: cx
             stagger: -8
@@ -68,23 +77,23 @@ points:
             rows: 
               bottom:
                 bind: [0,0,0,0]
-                column_net: P5
+                column_net: P6
               home: 
                 bind: [0,0,0,0]
                 column_net: P4
               top: 
-                bind: [0,0,0,1]
-                column_net: P3
+                bind: [0,1,0,1]
+                column_net: P21
           inner:
             spread: cx
             stagger: 7
             row_overrides: 
               bottom: 
-                bind: [0,0,0,1]
-                column_net: P6
+                bind: [1,0,0,1]
+                column_net: P5
               top: 
                 bind: [0,0,0,1]
-                column_net: P2
+                column_net: P1
 
     thumbfan:
       anchor:
@@ -97,8 +106,8 @@ points:
           rotate: 0
           rows:
             home:
-              bind: [0,5,0,0]
-              column_net: P18
+              bind: [0,5,0,1]
+              column_net: P16
         home:
           spread: 21
           rotate: -20
@@ -106,15 +115,15 @@ points:
           rows:
             home:
               bind: [0,5,3,8]
-              column_net: P19
+              column_net: P14
         far:
           spread: 20
           stagger: -5
           rotate: -17
           rows:
             home:
-              bind: [3,0,0,5]
-              column_net: P20
+              bind: [1,1.5,0,5]
+              column_net: P15
 outlines:
   exports:
     raw: 
@@ -128,7 +137,7 @@ outlines:
           rotate: 0
           shift: [-3.5cx-1, -1.5cy-2.25]
       - type: rectangle
-        size: [1.5cx, 64.5]
+        size: [26, 64.5]
         anchor:
           ref: board_inner_bottom
           rotate: 0
@@ -172,7 +181,7 @@ pcbs:
         type: via
         anchor:
           ref: board_inner_bottom
-          shift: [cx+10, -14]
+          shift: [21, -23]
         nets:
           net: RAW
       via4:
@@ -213,5 +222,5 @@ pcbs:
           neg: GND
         anchor:
           ref: board_inner_bottom
-          shift: [cx+1, -14]
+          shift: [19, -14]
           rotate: -90
